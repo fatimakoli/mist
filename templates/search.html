@@ -1,0 +1,20 @@
+<form action="{{url_for('home')}}" >
+<input type="submit" value="Go back to Search Page">
+</form>
+
+<form action="{{url_for('startover')}}">
+<input type="submit" value="Clear all and Start Over">
+</form>
+
+{% if text %}
+   You just searched: {{text}} 
+   <br>
+   <br>
+{% endif %}
+
+{% if tasks %}
+	Past searches: 
+	{% for task in tasks %}
+    	 <li>{{ task.word }}</li>
+	{% endfor %}
+{% endif %}
